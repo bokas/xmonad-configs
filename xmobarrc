@@ -6,9 +6,9 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run Date "%a %b %_d %k:%M" "date" 10
                     , Run StdinReader
-                    , Run Uptime ["-t", "<days> day(s) <hours>:<minutes>"] 10
+                    , Run Uptime ["-t", "<days> day(s) <hours>h:<minutes>m"] 10
                     , Run BatteryP ["BAT0"] ["-t", "<left>%",
                                    "-L", "10", "-H", "80", "-p", "3",
                                    "--", "-O", "<fc=green>On</fc> - ", "-i", "",
@@ -20,5 +20,5 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %uptime% | %cpu%#%coretemp% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | T:%EGLL% | B:%battery% "
+       , template = "%StdinReader% }{ %uptime% | %cpu%-%coretemp% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | T:%EGLL% | B:%battery% "
        }
